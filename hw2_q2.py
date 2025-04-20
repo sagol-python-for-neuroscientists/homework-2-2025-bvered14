@@ -51,3 +51,23 @@ def meetup(agent_listing: tuple) -> list:
 
     # Combine updated meeting agents with non-meeting agents
     return updated_agents + non_meeting_agents
+
+
+if __name__ == '__main__':
+    # Example input for testing
+    agents = (
+        Agent("Adam", Condition.SICK),
+        Agent("Cure0", Condition.CURE),
+        Agent("Cure1", Condition.CURE),
+        Agent("Bob", Condition.HEALTHY),
+        Agent("Alice", Condition.DEAD),
+        Agent("Charlie", Condition.DYING),
+        Agent("Vaccine", Condition.SICK),
+        Agent("Darlene", Condition.DYING),
+        Agent("Emma", Condition.SICK),
+        Agent("Cure2", Condition.CURE),
+    )
+    result = meetup(agents)
+    print("Updated agents after meetings:")
+    for agent in result:
+        print(agent)
